@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7991312627124390"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) - Nammadabus.in -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1W3M3GWQW2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PHQ8GQDMMMQ');
+    </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQ8GQDMMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PHQ8GQDMMQ');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nammadabus.in - Live Bus Timetable</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --primary-dark: #0369a1;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent-orange: #f97316;
+            --border-color: #e2e8f0;
+            --success-green: #22c55e;
+            --danger-red: #ef4444;
+            --info-light: #f0fdf4;
+            --info-border: #bbf7d0;
+            --info-text: #166534;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 12px;
+            line-height: 1.5;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 20px 16px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        /* Feature Direction & Status Note Card */
+        .status-note {
+            background-color: var(--info-light);
+            border-left: 4px solid var(--success-green);
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid var(--info-border);
+            border-left-width: 4px;
+        }
+        .status-note h3 {
+            margin-bottom: 4px;
+            color: #14532d;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+        .status-note p {
+            font-size: 0.82rem;
+            color: var(--info-text);
+            margin: 4px 0;
+            line-height: 1.4;
+        }
+
+        .search-container {
+            background: var(--card-bg);
+            padding: 16px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        select, .text-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 16px;
+        }
+
+        select:focus, .text-input:focus {
+            outline: none;
+            background-color: #fff;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
+        }
+
+        .live-toggle-container {
+            margin-top: 16px;
+        }
+
+        .next-bus-btn {
+            width: 100%;
+            background-color: var(--success-green);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(34, 197, 94, 0.2);
+        }
+
+        .next-bus-btn.active {
+            background-color: var(--danger-red);
+            box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);
+        }
+
+        .results-count {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+
+        .bus-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bus-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .bus-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: var(--primary-color);
+        }
+
+        .bus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .bus-time {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+        }
+
+        .bus-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: #e0f2fe;
+            color: var(--primary-dark);
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid #bae6fd;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .route-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .via-details {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            background: #fafafa;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px dashed #e2e8f0;
+            margin-bottom: 8px;
+        }
+
+        .malayalam-text {
+            font-family: 'Noto Serif Malayalam', serif;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .map-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background-color: #22c55e;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-top: 8px;
+            border: none;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px 10px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Nammadabus.in</h1>
+        <p>Comprehensive Master Timetable Portal</p>
+    </header>
+
+    <main>
+        <!-- SYSTEM NOTICE / DIRECTIONS NOTE -->
+      
+
+        <section class="search-container">
+            <div class="form-group">
+                <label for="fromSelect">Starting From (എവിടെ നിന്ന്)</label>
+                <select id="fromSelect" onchange="filterBuses()">
+                    <option value="ALL">-- Show All Stations --</option>
+                </select>
+            </div>
+            
+            <div class="form-group" style="margin-top: 16px;">
+                <label for="toSelect">Going To (എവിടേക്ക്)</label>
+                <select id="toSelect" onchange="filterBuses()">
+                    <option value="ALL">-- Show All Destinations --</option>
+                </select>
+            </div>
+
+            <!-- KEYWORD SEARCH FIELD -->
+            <div class="form-group" style="margin-top: 16px;">
+                <label for="keywordSearch">Search Bus Name / Route (കീവേഡ് തിരച്ചിൽ)</label>
+                <input type="text" id="keywordSearch" class="text-input" onkeyup="filterBuses()" placeholder="e.g. Salsabil, KSRTC, Cherupuzha, കണ്ണൂർ...">
+            </div>
+
+            <div class="live-toggle-container">
+                <button id="nextBusBtn" class="next-bus-btn" onclick="toggleNextBusesFilter()">
+                    <span>⏱️ Ini Ulla Busukal (Next Buses Only)</span>
+                </button>
+            </div>
+        </section>
+
+        <div class="results-count" id="resultsCount">Loading schedules...</div>
+        <section class="bus-list" id="busContainer"></section>
+    </main>
+
+    <footer>
+        <p>© 2026 Nammadabus.in • Accurate Regional Data Grid</p>
+    </footer>
+
+    <script>
+        const busDatabase = [
+            // --- KUTHUPARAMBA / KANNUR TIMINGS ---
+            { from: "Kuthuparamba", to: "Kannur", time: "06:00 AM", name: "TALENT", via: "Direct Limited Stop", fromMl: "കൂത്തുപറമ്പ്", toMl: "കണ്ണൂർ" },
+            { from: "Kuthuparamba", to: "Kannur", time: "06:20 AM", name: "MM4", via: "Payyannur Route", fromMl: "കൂത്തുപറമ്പ്", toMl: "കണ്ണൂർ" },
+            { from: "Kuthuparamba", to: "Kannur", time: "07:00 AM", name: "MADHAVI", via: "Payyannur Route", fromMl: "കൂത്തുപറമ്പ്", toMl: "കണ്ണൂർ" },
+            { from: "Kuthuparamba", to: "Kannur", time: "07:53 AM", name: "PALAKKADANS", via: "Payyannur Route", fromMl: "കൂത്തുപറമ്പ്", toMl: "കണ്ണൂർ" },
+            { from: "Kannur", to: "Kuthuparamba", time: "08:50 AM", name: "PRATAP", via: "Mananthavady Route", fromMl: "കണ്ണൂർ", toMl: "കൂത്തുപറമ്പ്" },
+            { from: "Kannur", to: "Kuthuparamba", time: "03:30 PM", name: "PALAKKADANS", via: "Kottiyoor Route", fromMl: "കണ്ണൂർ", toMl: "കൂത്തുപറമ്പ്" },
+
+            // --- PAYYAVUR / ALAKODE / CHERUPUZHA LIVE LINE TIMINGS ---
+            { from: "Payyavur", to: "Ballal", time: "08:45 AM", name: "KSRTC FP", via: "ചെമ്പേരി, ആലക്കോട്, വെള്ളരിക്കുണ്ട് വഴി", fromMl: "പയ്യാവൂർ", toMl: "ബലാൽ" },
+            { from: "Payyavur", to: "Cherupuzha", time: "09:15 AM", name: "BIGSHOW", via: "ചെമ്പേരി, ആലക്കോട് വഴി", fromMl: "പയ്യാവൂർ", toMl: "ചെറുപുഴ" },
+            { from: "Payyavur", to: "Mangalapuram", time: "09:40 AM", name: "KSRTC", via: "ചെമ്പേരി, ആലക്കോട്, ഓടയഞ്ചാൽ, കാഞ്ഞങ്ങാട്, കാസർഗോഡ് വഴി", fromMl: "പയ്യാവൂർ", toMl: "മംഗലാപുരം" },
+            { from: "Payyavur", to: "Alakode", time: "10:05 AM", name: "THEKKEDATH", via: "ചെമ്പേരി, ആലക്കോട്", fromMl: "പയ്യാവൂർ", toMl: "ആലക്കോട്" },
+            { from: "Payyavur", to: "Bandadka", time: "04:20 PM", name: "KSRTC", via: "ആലക്കോട്, ചെറുപുഴ, വെള്ളരിക്കുണ്ട്, രാജപുരം, മാലക്കല്ല് വഴി", fromMl: "പയ്യാവൂർ", toMl: "ബന്ധടുക്ക" },
+            { from: "Payyavur", to: "Ballal", time: "05:00 PM", name: "KSRTC", via: "ചെമ്പേരി, ആലക്കോട്, വെള്ളരിക്കുണ്ട് വഴി", fromMl: "പയ്യാവൂർ", toMl: "ബലാൽ" },
+            { from: "Payyavur", to: "Josegiri", time: "05:05 PM", name: "THEKKEDATH", via: "ശ്രീകണ്ഠാപുരം, ചെമ്പന്തോട്ടി, നടുവിൽ, ആലക്കോട്, ഉദയഗിരി വഴി", fromMl: "പയ്യാവൂർ", toMl: "ജോസ് ഗിരി" },
+            { from: "Payyavur", to: "Cherupuzha", time: "05:10 PM", name: "ANAND", via: "പയ്യാവൂരിൽ നിന്നും സ്റ്റാർട്ട് ചെയ്യുന്നു", fromMl: "പയ്യാവൂർ", toMl: "ചെറുപുഴ" },
+
+            // --- CHEMPERI MASTER STATION TIMINGS ---
+            // Towards Kannur
+            { from: "Chemperi", to: "Kannur", time: "06:35 AM", name: "SAGAR / സാഗര", via: "Sreekandapuram, Kannur", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "07:10 AM", name: "FAMILY / ഫാമിലി", via: "Sreekandapuram, Kannur", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "07:30 AM", name: "JANASHATHABDI / ജനശതാബ്ദി", via: "Direct Kannur Route", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "08:00 AM", name: "KRITHIKA / കൃതിക", via: "Direct Kannur Route", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "09:45 AM", name: "VISMAYA / വിസ്മയ", via: "Direct Kannur Route", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "10:00 AM", name: "MINAKSHI / മീനാക്ഷി", via: "Direct Kannur Route", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "10:10 AM", name: "SHREYAS / ശ്രേയസ്", via: "Irikkur, Kannur", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "12:45 PM", name: "FAMILY / ഫാമിലി", via: "Sreekandapuram, Kannur", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "01:10 PM", name: "JANASHATHABDI / ജനശതാബ്ദി", via: "Direct Kannur Route", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "02:00 PM", name: "KRITHIKA / കൃതിക", via: "Eruvatty, Kannur", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "03:20 PM", name: "KUNNATH / കുന്നത്ത്", via: "Sreekandapuram, Kannur", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "03:45 PM", name: "VISMAYA / വിസ്മയ", via: "Direct Kannur Route", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+            { from: "Chemperi", to: "Kannur", time: "04:40 PM", name: "SHREYAS / ശ്രേയസ്", via: "Irikkur, Kannur", fromMl: "ചെമ്പേരി", toMl: "കണ്ണൂർ" },
+
+            // Towards Taliparamba (FIXED: Added missing toMl keys to prevent 'undefined')
+            { from: "Chemperi", to: "Taliparamba", time: "05:35 AM", name: "JJ / ജাইജൈ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "07:00 AM", name: "KSRTC", via: "Oduvally", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "07:00 AM", name: "KSRTC", via: "Irikkur, Thalassery", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "07:40 AM", name: "NANDANAM / നന്ദനം", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "08:00 AM", name: "ANN MARY / അന്ന മേരി", via: "Chempanthotti", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "08:20 AM", name: "KUNNATH / കുന്നത്ത്", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "08:30 AM", name: "SALSABIL / സൽസബീൽ", via: "Eruvatty വഴി", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "08:45 AM", name: "NIRANJANA / നിരാഞ്ജന", via: "Chempanthotti, Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "08:50 AM", name: "SALSABIL / സൽസബീൽ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "09:15 AM", name: "JJ / ജൈജൈ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "10:15 AM", name: "PALAKKADANS / പാലക്കാടൻസ്", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "10:30 AM", name: "ST JUDE / സെന്റ് ജൂഡ്", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "11:10 AM", name: "NANDANAM / നന്ദനം", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "11:15 AM", name: "ANN MARY / അന്ന മേരി", via: "Chempanthotti", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "11:40 AM", name: "KUNNATH / കുന്നത്ത്", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "12:00 PM", name: "SALSABIL / സൽസബീൽ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "12:20 PM", name: "SALSABIL / സൽസബീൽ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "12:40 PM", name: "JJ / ജൈജൈ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "02:10 PM", name: "MINAKSHI / മീനാക്ഷി", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "02:50 PM", name: "EISWARA / ഐശ്വര്യ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "03:15 PM", name: "SAGAR / സാഗര", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "04:00 PM", name: "KSRTC", via: "Oduvally", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "04:15 PM", name: "JJ / ജൈജൈ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "04:30 PM", name: "SALSABIL / സൽസബീൽ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "05:05 PM", name: "MANGALATHIL / മംഗലാട്ടിൽ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "05:10 PM", name: "NIRANJANA / നിരാഞ്ജന", via: "Chempanthotti", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "05:15 PM", name: "PILAKUNNUMMAL / പിലാക്കുന്നമ്മൽ", via: "Sreekandapuram, Malappattam", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "05:50 PM", name: "SEVEN STAR / സെവൻ സ്റ്റാർ", via: "Ernakulam - Chala", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "06:20 PM", name: "SALSABIL / സൽസബീൽ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+            { from: "Chemperi", to: "Taliparamba", time: "06:40 PM", name: "EISWARA / ഐശ്വര്യ", via: "Sreekandapuram", fromMl: "ചെമ്പേരി", toMl: "തളിപ്പറമ്പ്" },
+
+            // Towards Iritty
+            { from: "Chemperi", to: "Iritty", time: "05:25 AM", name: "KSRTC", via: "Mananthavady Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "05:50 AM", name: "KSRTC", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "06:30 AM", name: "KSRTC", via: "Mananthavady Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "07:15 AM", name: "SHALAKSHMI / ശാലക്ഷ്മി", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "07:30 AM", name: "KSRTC", via: "Mananthavady / വീർപ്പാട്", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "08:00 AM", name: "KSRTC", via: "Mananthavady Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "08:25 AM", name: "KSRTC", via: "Mananthavady Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "09:15 AM", name: "ST MARYS / സെന്റ് മേരീസ്", via: "Kottiyoor Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "09:45 AM", name: "SEVEN STAR / സെവൻ സ്റ്റാർ", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "10:15 AM", name: "SHALAKSHMI / ശാലക്ഷ്മി", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "10:30 AM", name: "JACOBS / ജേക്കബ്", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "10:50 AM", name: "KSRTC", via: "Keralam / Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "11:00 AM", name: "SHEEJA / ഷീജ", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "11:15 AM", name: "AJSAL / അജ്സൽ", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "11:30 AM", name: "KSRTC", via: "Mananthavady Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "11:35 AM", name: "NIRMALAYAM / നിർമാല്യം", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "12:15 PM", name: "IPC / ഐ പി സി", via: "Kizhupally വഴി", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "12:30 PM", name: "KSRTC", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "12:40 PM", name: "KSRTC", via: "Mananthavady Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "12:50 PM", name: "CHAITHRAM / ചൈത്രം", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "01:00 PM", name: "ST MARYS / സെന്റ് മേരീസ്", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "01:50 PM", name: "SEVEN STAR / സെവൻ സ്റ്റാർ", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "02:15 PM", name: "BIGSHOW / ബിഗ്ഷോ", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "03:00 PM", name: "KSRTC", via: "Mananthavady Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "03:30 PM", name: "PROVIDENCE / പ്രൊവിഡൻസ്", via: "Thalassery Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "03:45 PM", name: "SANIYA / സാനിയ", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "04:10 PM", name: "HOLY ANGEL / Holi Angel", via: "Kizhupally വഴി", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "04:30 PM", name: "AVE MARIA / ആവേ മരിയ", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "04:40 PM", name: "ANAND / ആനന്ദ്", via: "Payyavur Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "05:00 PM", name: "ST JUDE / സെന്റ് ജൂഡ്", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "05:15 PM", name: "KERALA / കേരള", via: "Kottiyoor Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "05:40 PM", name: "KSRTC", via: "Vaniyappara", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "06:05 PM", name: "KSRTC", via: "Vaniyappara", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "06:30 PM", name: "CHAITHRAM / ചൈത്രം", via: "Direct", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "07:50 PM", name: "KSRTC", via: "Vaniyappara", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "08:10 PM", name: "MADHAVI / മാധവി", via: "Ernakulam Route", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+            { from: "Chemperi", to: "Iritty", time: "09:00 PM", name: "KSRTC", via: "Vaniyappara", fromMl: "ചെമ്പേരി", toMl: "ഇരിട്ടി" },
+
+            // Towards Alakode
+            { from: "Chemperi", to: "Alakode", time: "04:00 AM", name: "KSRTC", via: "Payyannur Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "04:30 AM", name: "KSRTC", via: "Payyannur Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "06:30 AM", name: "KSRTC", via: "Kanhangad Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "06:50 AM", name: "KSRTC", via: "Mangalapuram Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "07:30 AM", name: "KSRTC", via: "Kanhangad Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "08:05 AM", name: "IPC / ഐ പി സി", via: "Cherupuzha Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "08:20 AM", name: "HOLY ANGEL / Holi Angel", via: "Kudiyanmala, Alakode", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "09:10 AM", name: "THEKKEDATH / തെക്കേടത്ത്", via: "Cherupuzha Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "09:44 AM", name: "KSRTC", via: "Kanhangad Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "10:10 AM", name: "BIGSHOW / ബിഗ്ഷോ", via: "Cherupuzha Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "10:25 AM", name: "KSRTC", via: "Mangalapuram Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "11:00 AM", name: "KSRTC", via: "Kanhangad Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "11:45 AM", name: "KSRTC", via: "Cherupuzha Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "12:40 PM", name: "ANAND / ആനന്ദ്", via: "Cherupuzha Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "01:15 PM", name: "JACOBS / ജേക്കബ്", via: "Cherupuzha, Vellarikundu", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "01:40 PM", name: "ST MARYS / സെന്റ് മേരീസ്", via: "Panathur Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "02:15 PM", name: "KSRTC", via: "Kanhangad Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "02:55 PM", name: "ST MARYS / സെന്റ് മേരീസ്", via: "Vellarikundu Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "03:15 PM", name: "AJSAL / അജ്സൽ", via: "Paadichal Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "03:20 PM", name: "KSRTC", via: "Rajagiri Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "03:45 PM", name: "KSRTC", via: "Panathur Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "04:10 PM", name: "KAVALAM / കാവാലം", via: "Panathur Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "04:40 PM", name: "KSRTC", via: "Cherupuzha Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "05:15 PM", name: "ANAND / ആനന്ദ്", via: "Cherupuzha Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "05:50 PM", name: "KSRTC", via: "Vellarikundu Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "06:30 PM", name: "HOLY ANGEL /  ഹോളി എയ്ഞ്ചൽ", via: "Alakode Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" },
+            { from: "Chemperi", to: "Alakode", time: "06:40 PM", name: "KSRTC", via: "Kanhangad Route", fromMl: "ചെമ്പേരി", toMl: "ആലക്കോട്" }
+        ];
+
+        // --- FILTER ENGINE LOGIC ---
+        const fromSelect = document.getElementById('fromSelect');
+        const toSelect = document.getElementById('toSelect');
+        const keywordSearch = document.getElementById('keywordSearch');
+        const busContainer = document.getElementById('busContainer');
+        const resultsCount = document.getElementById('resultsCount');
+        const nextBusBtn = document.getElementById('nextBusBtn');
+
+        let showNextBusesOnly = false;
+
+        function getBusMinutes(timeStr) {
+            const [timePart, ampm] = timeStr.split(' ');
+            let [hours, minutes] = timePart.split(':').map(Number);
+            if (ampm === 'PM' && hours !== 12) hours += 12;
+            if (ampm === 'AM' && hours === 12) hours = 0;
+            return (hours * 60) + minutes;
+        }
+
+        // FIXED DROPDOWN PARSER: Prevents duplicates and handles fallback safely
+        function setupDropdowns() {
+            const fromStations = new Set();
+            const toDestinations = new Set();
+
+            busDatabase.forEach(item => {
+                // Ensure Malayalam strings fallback safely to prevent processing 'undefined' string markers
+                const fMl = item.fromMl || item.from;
+                const tMl = item.toMl || item.to;
+                
+                fromStations.add(`${item.from}|${fMl}`);
+                toDestinations.add(`${item.to}|${tMl}`);
+            });
+
+            // Sort and build structured clean element nodes safely
+            Array.from(fromStations).sort().forEach(station => {
+                const [en, ml] = station.split('|');
+                const opt = document.createElement('option');
+                opt.value = en;
+                opt.textContent = `${en} (${ml})`;
+                fromSelect.appendChild(opt);
+            });
+
+            Array.from(toDestinations).sort().forEach(destination => {
+                const [en, ml] = destination.split('|');
+                const opt = document.createElement('option');
+                opt.value = en;
+                opt.textContent = `${en} (${ml})`;
+                toSelect.appendChild(opt);
+            });
+        }
+
+        function toggleNextBusesFilter() {
+            showNextBusesOnly = !showNextBusesOnly;
+            if (showNextBusesOnly) {
+                nextBusBtn.classList.add('active');
+                nextBusBtn.innerHTML = '<span>🔄 Show All Buses (എല്ലാ ബസുകളും കാണിക്കുക)</span>';
+            } else {
+                nextBusBtn.classList.remove('active');
+                nextBusBtn.innerHTML = '<span>⏱️ Ini Ulla Busukal (Next Buses Only)</span>';
+            }
+            filterBuses();
+        }
+
+        function filterBuses() {
+            const selectedFrom = fromSelect.value;
+            const selectedTo = toSelect.value;
+            const textQuery = keywordSearch.value.trim().toLowerCase();
+            
+            const now = new Date();
+            const currentMinutes = (now.getHours() * 60) + now.getMinutes();
+
+            const filtered = busDatabase.filter(bus => {
+                const matchFrom = (selectedFrom === "ALL" || bus.from === selectedFrom);
+                const matchTo = (selectedTo === "ALL" || bus.to === selectedTo);
+                
+                let matchTime = true;
+                if (showNextBusesOnly) {
+                    const busMinutes = getBusMinutes(bus.time);
+                    matchTime = busMinutes >= currentMinutes;
+                }
+
+                let matchText = true;
+                if (textQuery !== "") {
+                    matchText = bus.name.toLowerCase().includes(textQuery) ||
+                                bus.via.toLowerCase().includes(textQuery) ||
+                                bus.from.toLowerCase().includes(textQuery) ||
+                                bus.to.toLowerCase().includes(textQuery) ||
+                                (bus.fromMl && bus.fromMl.includes(textQuery)) ||
+                                (bus.toMl && bus.toMl.includes(textQuery));
+                }
+
+                return matchFrom && matchTo && matchTime && matchText;
+            });
+
+            resultsCount.textContent = `${filtered.length} Bus services found running`;
+            busContainer.innerHTML = "";
+
+            if (filtered.length === 0) {
+                busContainer.innerHTML = `
+                    <div class="no-results" style="padding: 20px; text-align: center; color: var(--text-muted);">
+                        <p>No upcoming direct buses found for this selection.</p>
+                    </div>`;
+                return;
+            }
+
+            filtered.forEach(bus => {
+                const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(bus.to + ', Kerala')}`;
+                const displayFromMl = bus.fromMl || bus.from;
+                const displayToMl = bus.toMl || bus.to;
+
+                const card = document.createElement('div');
+                card.className = "bus-card";
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="bus-time">${bus.time}</div>
+                        <div class="bus-name">🚌 ${bus.name}</div>
+                    </div>
+                    <div class="route-info">
+                        <span>${bus.from}</span> ➡️ <span>${bus.to}</span>
+                    </div>
+                    <div class="via-details">
+                        <b>Via:</b> ${bus.via}
+                    </div>
+                    <div class="malayalam-text">
+                        റൂട്ട്: ${displayFromMl} ➔ ${displayToMl}
+                    </div>
+                    <a href="${mapsUrl}" target="_blank" class="map-action-btn">
+                        📍 View Destination Route Map
+                    </a>
+                `;
+                busContainer.appendChild(card);
+            });
+        }
+
+        // Run dropdown parser and immediate data grid render on boot
+        window.onload = function() {
+            setupDropdowns();
+            filterBuses();
+        };
+    </script>
+</body>
+</html>
